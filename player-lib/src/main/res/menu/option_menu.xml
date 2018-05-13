@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/change_grid_option"
+        android:icon="@drawable/grid_item"
+        android:title="change grid span count"
+        app:showAsAction="always"></item>
+
+    <item android:id="@+id/language_choose_option"
+        android:title="@string/language_title"
+        ></item>
+    <item
+        android:id="@+id/about_us_option"
+        android:title="@string/about_us"
+        ></item>
+</menu>

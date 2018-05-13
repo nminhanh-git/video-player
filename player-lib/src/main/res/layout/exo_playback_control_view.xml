@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?><!-- Copyright (C) 2016 The Android Open Source Project
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+          http://www.apache.org/licenses/LICENSE-2.0
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#78000000"
+
+    android:layoutDirection="ltr">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="5dp"
+        android:orientation="horizontal"
+        android:paddingLeft="5dp">
+
+        <ImageButton
+            android:id="@+id/back_button"
+            style="@style/BackButtonTheme"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="?attr/selectableItemBackground" />
+
+        <TextView
+            android:id="@+id/video_title"
+            style="@style/TextItemTheme"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical|center_horizontal"
+            android:paddingLeft="5dp"
+            android:text="TITLE"
+            android:textColor="#78fafafa"
+            android:textSize="21sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/controller_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/seek_bar"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="100dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:weightSum="9">
+
+        <!--<ImageButton-->
+        <!--android:id="@id/exo_prev"-->
+        <!--style="@style/ExoMediaButton.Previous" />-->
+
+        <ImageButton
+            android:id="@id/exo_rew"
+            style="@style/ExoMediaButton.Rewind"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:background="?attr/selectableItemBackground"
+            android:src="@drawable/ic_rewind" />
+
+        <!--<ImageButton-->
+        <!--android:id="@id/exo_shuffle"-->
+        <!--style="@style/ExoMediaButton.Shuffle" />-->
+
+        <!--<ImageButton-->
+        <!--android:id="@id/exo_repeat_toggle"-->
+        <!--style="@style/ExoMediaButton" />-->
+
+        <ImageButton
+            android:id="@id/exo_play"
+            style="@style/ExoMediaButton.Play"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:background="?attr/selectableItemBackground"
+            android:src="@drawable/ic_play_button" />
+
+        <ImageButton
+            android:id="@id/exo_pause"
+            style="@style/ExoMediaButton.Pause"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:background="?attr/selectableItemBackground"
+            android:src="@drawable/ic_pause" />
+
+        <ImageButton
+            android:id="@id/exo_ffwd"
+            style="@style/ExoMediaButton.FastForward"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:background="?attr/selectableItemBackground"
+            android:src="@drawable/ic_fast_forward" />
+
+        <!--<ImageButton-->
+        <!--android:id="@id/exo_next"-->
+        <!--style="@style/ExoMediaButton.Next" />-->
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_above="@id/seek_bar"
+        android:orientation="horizontal"
+        android:weightSum="10">
+
+        <ImageButton
+            android:id="@+id/video_volume_button"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:background="#00ffffff"
+            android:src="@drawable/ic_speaker"
+
+            />
+
+        <LinearLayout
+            android:id="@+id/volume_seekbar_group"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@id/video_volume_button"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/ic_mute_no_border" />
+
+            <SeekBar
+                android:id="@+id/video_volume_seek_bar"
+                android:layout_width="200dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:backgroundTint="#64000000"
+                android:progressBackgroundTint="#fafafa"
+                android:progressTint="#43cea2"
+                android:thumbTint="#43cea2" />
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/ic_speaker_no_border" />
+        </LinearLayout>
+
+        <ImageButton
+            android:id="@+id/video_rotate_button"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/circle_border"
+            android:src="@drawable/ic_rotate" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/seek_bar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="30dp"
+        android:gravity="center_vertical|center_horizontal"
+        android:orientation="horizontal"
+        android:weightSum="10">
+
+        <TextView
+            android:id="@id/exo_position"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_weight="1"
+            android:includeFontPadding="false"
+            android:maxLines="1"
+            android:textColor="#50fafafa"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:layout_gravity="center_vertical|left"/>
+
+        <com.google.android.exoplayer2.ui.DefaultTimeBar
+            android:id="@id/exo_progress"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="8"
+            android:paddingLeft="4dp"
+            android:paddingRight="4dp"
+            app:buffered_color="#50fafafa"
+            app:played_color="#43cea2"
+            app:scrubber_color="#43cea2"
+            app:unplayed_color="#50fafafa" />
+
+        <TextView
+            android:id="@id/exo_duration"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"
+            android:includeFontPadding="false"
+            android:maxLines="1"
+            android:textColor="#50fafafa"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:layout_gravity="right|center_vertical"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

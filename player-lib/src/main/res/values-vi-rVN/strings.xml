@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Video player</string>
+    <string name="player_activity_name">VIDEO</string>
+    <string name="language_title">Ngôn ngữ</string>
+    <string name="language_choose_dialog">Chọn ngôn ngữ</string>
+    <string name="english">Tiếng Anh</string>
+    <string name="vietnamese">Tiếng Việt</string>
+    <string name="ok_button">OK</string>
+    <string name="cancel_button">HỦY</string>
+    <string name="permission_title">CẤP QUYỀN ỨNG DỤNG</string>
+    <string name="permission_cancel">Không cho!</string>
+    <string name="permission_ok">cấp quyền</string>
+    <string name="permission_message">ứng dụng này cần được cấp quyền truy cập vào bộ nhớ để có thể xem được video...</string>
+    <string name="about_us">Về chúng tôi</string>
+    <string name="creator">tác giả</string>
+    <string name="version">phiên bản: 1.0</string>
+</resources>
